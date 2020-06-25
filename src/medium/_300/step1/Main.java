@@ -1,4 +1,4 @@
-package medium._300;
+package medium._300.step1;
 
 public class Main {
     public static void main(String[] args) {
