@@ -1,4 +1,4 @@
-package com.javashitang.linkedList._5;
+package com.javashitang.linkedList._4;
 
 import org.junit.Test;
 
@@ -11,14 +11,14 @@ import static org.junit.Assert.*;
 public class SolutionTest {
 
     @Test
-    public void reverseList() {
+    public void removeNthFromEnd() {
         ListNode listNode5 = new ListNode(5, null);
         ListNode listNode4 = new ListNode(4, listNode5);
         ListNode listNode3 = new ListNode(3, listNode4);
         ListNode listNode2 = new ListNode(2, listNode3);
         ListNode listNode1 = new ListNode(1, listNode2);
         Solution solution = new Solution();
-        ListNode listNode = solution.reverseList(listNode1);
+        ListNode listNode = solution.removeNthFromEnd(listNode1, 2);
         while (listNode != null) {
             System.out.println(listNode.val);
             listNode = listNode.next;
