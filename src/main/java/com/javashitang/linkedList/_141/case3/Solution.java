@@ -1,8 +1,8 @@
-package com.javashitang.linkedList._1.case3;
+package com.javashitang.linkedList._141.case3;
 
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author lilimin
@@ -12,12 +12,12 @@ import java.util.List;
 class Solution {
 
     public boolean hasCycle(ListNode head) {
-        List<ListNode> listNodeList = new ArrayList<>();
+        Map<ListNode, Boolean> listNodeMap = new HashMap();
         while (head != null) {
-            if (listNodeList.contains(head)) {
+            if (listNodeMap.containsKey(head)) {
                 return true;
             }
-            listNodeList.add(head);
+            listNodeMap.put(head, null);
             head = head.next;
         }
         return false;

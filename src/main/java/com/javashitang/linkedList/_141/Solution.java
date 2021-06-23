@@ -1,6 +1,4 @@
-package com.javashitang.linkedList._1;
-
-import java.util.List;
+package com.javashitang.linkedList._141;
 
 /**
  * @author lilimin

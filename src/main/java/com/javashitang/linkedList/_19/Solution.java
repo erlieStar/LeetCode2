@@ -1,4 +1,4 @@
-package com.javashitang.linkedList._4;
+package com.javashitang.linkedList._19;
 
 /**
  * @author lilimin
@@ -7,9 +7,6 @@ package com.javashitang.linkedList._4;
 class Solution {
 
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        if (head.next == null) {
-            return null;
-        }
         ListNode tempHead = head;
         ListNode slow = head;
         ListNode fast = head;
