@@ -7,9 +7,9 @@ package com.javashitang.linkedList._19;
 class Solution {
 
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        ListNode tempHead = head;
-        ListNode slow = head;
-        ListNode fast = head;
+        ListNode tempHead = new ListNode(0, head);
+        ListNode slow = tempHead;
+        ListNode fast = tempHead;
         for (int i = 0; i <= n; i++) {
             fast = fast.next;
         }
@@ -18,6 +18,6 @@ class Solution {
             slow = slow.next;
         }
         slow.next = slow.next.next;
-        return tempHead;
+        return tempHead.next;
     }
 }

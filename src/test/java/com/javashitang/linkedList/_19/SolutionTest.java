@@ -22,4 +22,13 @@ public class SolutionTest {
             listNode = listNode.next;
         }
     }
+
+
+    @Test
+    public void test() {
+        ListNode listNode1 = new ListNode(1, null);
+        Solution solution = new Solution();
+        ListNode listNode = solution.removeNthFromEnd(listNode1, 1);
+        System.out.println(listNode);
+    }
 }
