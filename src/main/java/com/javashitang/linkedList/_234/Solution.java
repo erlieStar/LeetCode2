@@ -1,5 +1,8 @@
 package com.javashitang.linkedList._234;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author lilimin
  * @since 2021-07-04
@@ -7,11 +10,19 @@ package com.javashitang.linkedList._234;
 class Solution {
 
     public boolean isPalindrome(ListNode head) {
-        ListNode slow = head;
-        ListNode fast = head;
-        while (fast != null) {
-            slow = slow.next;
-            fast = fast.next == null ? fast.next : fast.next.next;
+        List<Integer> list = new ArrayList<>();
+        while (head != null) {
+            list.add(head.val);
+            head = head.next;
+        }
+        int start = 0;
+        int end = list.size() - 1;
+        while (start <= end) {
+            if (!list.get(start).equals(list.get(end))) {
+                return false;
+            }
+            start++;
+            end--;
         }
         return true;
     }
