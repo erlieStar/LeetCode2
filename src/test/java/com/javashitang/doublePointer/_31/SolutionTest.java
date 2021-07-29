@@ -19,4 +19,14 @@ public class SolutionTest {
             System.out.println(num[i]);
         }
     }
+
+    @Test
+    public void nextPermutation2() {
+        Solution solution = new Solution();
+        int[] num = {1, 3, 2};
+        solution.nextPermutation(num);
+        for (int i = 0; i < num.length; i++) {
+            System.out.println(num[i]);
+        }
+    }
 }

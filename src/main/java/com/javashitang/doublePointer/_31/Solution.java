@@ -1,5 +1,7 @@
 package com.javashitang.doublePointer._31;
 
+import java.util.Arrays;
+
 /**
  * @author lilimin
  * @since 2021-06-30
@@ -23,11 +25,18 @@ class Solution {
 
     public void nextPermutation(int[] nums) {
         for (int i = nums.length - 1; i >= 0; i--) {
-            for (int j = i - 1; j >= 0; j--) {
-                if (nums[i] > nums[j]) {
-                    swap(i, j, nums);
-                    return;
+            int min = Integer.MAX_VALUE;
+            int target = 0;
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[j] > nums[i] && nums[j] < min) {
+                    min = nums[j];
+                    target = j;
                 }
+            }
+            if (min != Integer.MAX_VALUE) {
+                swap(i, target, nums);
+                Arrays.sort(nums, i + 1, nums.length);
+                return;
             }
         }
         // 没有移动，说明数组倒序排列
