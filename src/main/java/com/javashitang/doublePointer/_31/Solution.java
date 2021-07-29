@@ -39,14 +39,8 @@ class Solution {
                 return;
             }
         }
-        // 没有移动，说明数组倒序排列
-        int left = 0;
-        int right = nums.length - 1;
-        while (left < right) {
-            swap(left, right, nums);
-            left++;
-            right--;
-        }
+        // 没有移动，说明数组倒序排列，升序即可
+        Arrays.sort(nums);
     }
 
     public void swap(int a, int b, int[] nums) {
