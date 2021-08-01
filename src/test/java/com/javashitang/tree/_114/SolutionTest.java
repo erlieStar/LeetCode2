@@ -29,4 +29,11 @@ public class SolutionTest {
 
         System.out.println(node1);
     }
+
+    @Test
+    public void test1() {
+        if (null == null) {
+            System.out.println("yes");
+        }
+    }
 }
