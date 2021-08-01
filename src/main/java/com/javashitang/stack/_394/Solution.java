@@ -1,4 +1,4 @@
-package com.javashitang.string._394;
+package com.javashitang.stack._394;
 
 import java.util.Stack;
 
@@ -11,13 +11,15 @@ import java.util.Stack;
  *
  * 3[a2[c]]
  * accaccacc
+ *
+ * 3[a2[c]]
  */
 class Solution {
 
     public String decodeString(String s) {
         Stack<Integer> numStack = new Stack<>();
         Stack<String> charStack = new Stack<>();
-        String result = "";
+        StringBuilder result = new StringBuilder();
         int num = 0;
         for (int i = 0; i < s.length(); i++) {
             char item = s.charAt(i);
@@ -25,31 +27,20 @@ class Solution {
                 num = num * 10 + item - '0';
             } else if (item == '[') {
                 numStack.push(num);
-                if (result != "") {
-                    charStack.push(result);
-                    result = "";
-                }
+                charStack.push(result.toString());
+                result = new StringBuilder();
                 num = 0;
             } else if (item == ']') {
-                if (result != "") {
-                    charStack.push(result);
-                    result = "";
-                }
-                String newStr = "";
-                String str = charStack.pop();
+                StringBuilder newStr = new StringBuilder();
                 Integer total = numStack.pop();
                 for (int j = 0; j < total; j++) {
-                    newStr += str;
+                    newStr.append(result);
                 }
-                charStack.push(newStr);
+                result = new StringBuilder(charStack.pop() + newStr);
             } else {
-                result += item;
+                result.append(item);
             }
         }
-        String finalResult = "";
-        while (!charStack.isEmpty()) {
-            finalResult = charStack.pop() + finalResult;
-        }
-        return finalResult;
+        return result.toString();
     }
 }
