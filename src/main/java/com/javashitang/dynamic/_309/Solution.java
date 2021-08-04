@@ -1,4 +1,4 @@
-package com.javashitang._309;
+package com.javashitang.dynamic._309;
 
 /**
  * @author lilimin
@@ -6,6 +6,9 @@ package com.javashitang._309;
  */
 class Solution {
     public int maxProfit(int[] prices) {
+        if (prices.length == 0) {
+            return 0;
+        }
         return 0;
     }
 }

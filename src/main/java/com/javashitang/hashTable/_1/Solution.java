@@ -1,4 +1,4 @@
-package com.javashitang._1;
+package com.javashitang.hashTable._1;
 
 import java.util.HashMap;
 import java.util.Map;
