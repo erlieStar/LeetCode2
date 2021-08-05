@@ -1,4 +1,4 @@
-package com.javashitang.tree._124;
+package com.javashitang.tree._124.case2;
 
 /**
  * @author lilimin
@@ -21,16 +21,10 @@ class Solution {
         if (root == null) {
             return 0;
         }
-        int left = postOrder(root.left);
-        int right = postOrder(root.right);
-        int value = root.val;
-        if (left > 0) {
-            value += left;
-        }
-        if (right > 0) {
-            value += right;
-        }
+        int left = Math.max(postOrder(root.left), 0);
+        int right = Math.max(postOrder(root.right), 0);
+        int value = root.val + left + right;
         max = Math.max(max, value);
-        return Math.max(0, Math.max(left, right)) + root.val;
+        return Math.max(left, right) + root.val;
     }
 }

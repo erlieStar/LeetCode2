@@ -19,16 +19,47 @@ public class SolutionTest {
         Solution solution = new Solution();
         int[][] merge = solution.merge(intervals);
         for (int i = 0; i < merge.length; i++) {
-            System.out.println(merge[i][0]);
+            System.out.println(merge[i][0] + " " + merge[i][1]);
         }
     }
 
     @Test
     public void test() {
-        List<int[]> list = new ArrayList<>();
-        list.add(new int[]{1, 2});
-        for (int[] ints : list) {
-            System.out.println(ints[0] + " " + ints[1]);
+        int[][] intervals = {{1,3}};
+        Solution solution = new Solution();
+        int[][] merge = solution.merge(intervals);
+        for (int i = 0; i < merge.length; i++) {
+            System.out.println(merge[i][0] + " " + merge[i][1]);
+        }
+    }
+
+    @Test
+    public void test1() {
+        int[][] intervals = {{1,2}, {2,3}};
+        Solution solution = new Solution();
+        int[][] merge = solution.merge(intervals);
+        for (int i = 0; i < merge.length; i++) {
+            System.out.println(merge[i][0] + " " + merge[i][1]);
+        }
+    }
+
+    @Test
+    public void test2() {
+        int[][] intervals = {{1,4}, {2,3}};
+        Solution solution = new Solution();
+        int[][] merge = solution.merge(intervals);
+        for (int i = 0; i < merge.length; i++) {
+            System.out.println(merge[i][0] + " " + merge[i][1]);
+        }
+    }
+
+    @Test
+    public void test3() {
+        int[][] intervals = {{1,10}, {2,3}, {4, 5}};
+        Solution solution = new Solution();
+        int[][] merge = solution.merge(intervals);
+        for (int i = 0; i < merge.length; i++) {
+            System.out.println(merge[i][0] + " " + merge[i][1]);
         }
     }
 }

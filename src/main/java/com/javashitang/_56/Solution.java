@@ -13,21 +13,14 @@ class Solution {
     public int[][] merge(int[][] intervals) {
         List<int[]> list = new ArrayList<>();
         Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
-        int left = intervals[0][0];
-        for (int i = 1; i < intervals.length; i++) {
-            if (intervals[i][0] > intervals[i - 1][1]) {
-                System.out.println(i);
-                list.add(new int[]{left, intervals[i - 1][1]});
-                if (i + 1 < intervals.length) {
-                    left = intervals[i + 1][0];
-                }
+        for (int i = 0; i < intervals.length; i++) {
+            if (i == 0 || intervals[i][0] > list.get(list.size() - 1)[1]) {
+                list.add(new int[]{intervals[i][0], intervals[i][1]});
+            } else {
+                int right[] = list.get(list.size() - 1);
+                right[1] = Math.max(right[1], intervals[i][1]);
             }
         }
-        int[][] result = new int[list.size()][2];
-        for (int i = 0; i < list.size(); i++) {
-            result[i][0] = list.get(i)[0];
-            result[i][1] = list.get(i)[1];
-        }
-        return result;
+        return list.toArray(new int[list.size()][]);
     }
 }
