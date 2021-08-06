@@ -1,4 +1,4 @@
-package com.javashitang._79;
+package com.javashitang.backtracking._79;
 
 /**
  * @author lilimin
@@ -33,12 +33,10 @@ class Solution {
                 return;
             }
             for (int i = 0; i < dir.length; i++) {
-                for (int j = 0; j < 2; j++) {
-                    char temp = board[row][column];
-                    board[row][column] = '.';
-                    dfs(row + dir[i][j], column + dir[i][j], board, word, cur + 1);
-                    board[row][column] = temp;
-                }
+                char temp = board[row][column];
+                board[row][column] = '.';
+                dfs(row + dir[i][0], column + dir[i][1], board, word, cur + 1);
+                board[row][column] = temp;
             }
         }
     }
