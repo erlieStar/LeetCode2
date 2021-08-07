@@ -1,4 +1,4 @@
-package com.javashitang._3;
+package com.javashitang.slidingWindow._76;
 
 import org.junit.Test;
 
@@ -6,21 +6,21 @@ import static org.junit.Assert.*;
 
 /**
  * @author lilimin
- * @since 2021-08-04
+ * @since 2021-08-07
  */
 public class SolutionTest {
 
     @Test
-    public void lengthOfLongestSubstring() {
+    public void minWindow() {
         Solution solution = new Solution();
-        int result = solution.lengthOfLongestSubstring("abcabcbb");
+        String result = solution.minWindow("ADOBECODEBANC", "ABC");
         System.out.println(result);
     }
 
     @Test
-    public void lengthOfLongestSubstring1() {
+    public void minWindow1() {
         Solution solution = new Solution();
-        int result = solution.lengthOfLongestSubstring("abc");
+        String result = solution.minWindow("a", "a");
         System.out.println(result);
     }
 }
