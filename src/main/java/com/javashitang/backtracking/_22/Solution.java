@@ -7,6 +7,8 @@ import java.util.Stack;
 /**
  * @author lilimin
  * @since 2021-07-05
+ *
+ * 排列问题
  */
 class Solution {
 

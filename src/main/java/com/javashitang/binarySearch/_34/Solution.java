@@ -1,4 +1,4 @@
-package com.javashitang.binarySearch._7;
+package com.javashitang.binarySearch._34;
 
 /**
  * @author lilimin
