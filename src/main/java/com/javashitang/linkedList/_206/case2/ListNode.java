@@ -1,4 +1,4 @@
-package com.javashitang.linkedList._6;
+package com.javashitang.linkedList._206.case2;
 
 /**
  * @author lilimin

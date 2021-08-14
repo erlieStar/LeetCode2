@@ -1,4 +1,4 @@
-package com.javashitang.linkedList._5;
+package com.javashitang.linkedList._206;
 
 
 /**
@@ -9,13 +9,13 @@ package com.javashitang.linkedList._5;
 class Solution {
 
     public ListNode reverseList(ListNode head) {
-        ListNode newHead = new ListNode();
+        ListNode dummy = new ListNode();
         while (head != null) {
             ListNode curNode = head;
             head = head.next;
-            curNode.next = newHead.next;
-            newHead.next = curNode;
+            curNode.next = dummy.next;
+            dummy.next = curNode;
         }
-        return newHead.next;
+        return dummy.next;
     }
 }

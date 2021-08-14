@@ -1,8 +1,6 @@
-package com.javashitang.linkedList._5;
+package com.javashitang.linkedList._206;
 
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * @author lilimin

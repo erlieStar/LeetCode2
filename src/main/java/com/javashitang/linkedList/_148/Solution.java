@@ -21,13 +21,13 @@ class Solution {
             head = head.next;
         }
         Collections.sort(resultList);
-        ListNode temp = new ListNode();
-        ListNode preHead = temp;
+        ListNode dummy = new ListNode();
+        ListNode dummyTemp = dummy;
         for (Integer item : resultList) {
             ListNode listNode = new ListNode(item);
-            temp.next = listNode;
-            temp = temp.next;
+            dummy.next = listNode;
+            dummy = dummy.next;
         }
-        return preHead.next;
+        return dummyTemp.next;
     }
 }
