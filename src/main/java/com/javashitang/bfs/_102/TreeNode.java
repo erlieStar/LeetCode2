@@ -1,4 +1,4 @@
-package com.javashitang.tree._102;
+package com.javashitang.bfs._102;
 
 /**
  * @author lilimin

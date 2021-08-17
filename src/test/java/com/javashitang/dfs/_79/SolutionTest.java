@@ -1,4 +1,4 @@
-package com.javashitang.backtracking._79;
+package com.javashitang.dfs._79;
 
 import org.junit.Test;
 

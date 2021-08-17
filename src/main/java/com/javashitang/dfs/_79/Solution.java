@@ -1,4 +1,4 @@
-package com.javashitang.backtracking._79;
+package com.javashitang.dfs._79;
 
 /**
  * @author lilimin
@@ -8,6 +8,7 @@ package com.javashitang.backtracking._79;
  */
 class Solution {
 
+    // 代表4个方向 左，右，上，下
     int[][] dir = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
     boolean flag = false;
