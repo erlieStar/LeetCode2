@@ -18,25 +18,31 @@ class Solution {
         if (grid[0][0] == 1) {
             return -1;
         }
+        int n = grid.length - 1;
         Queue<int[]> queue = new LinkedList<>();
         queue.add(new int[] {0, 0});
         grid[0][0] = 1;
+        int result = 0;
         while (!queue.isEmpty()) {
-            int[] item = queue.poll();
-            for (int i = 0; i < 8; i++) {
-                int newx = item[0] + dir[i][0];
-                int newy = item[1] + dir[i][1];
-                while (check(newx, newy, grid.length)) {
-
+            result++;
+            int size = queue.size();
+            // 判断的时候不能用 i < queue.size()，因为queue.size()的值在一直变
+            for (int i = 0; i < size; i++) {
+                int[] item = queue.poll();
+                for (int j = 0; j < 8; j++) {
+                    if (item[0] == n && item[1] == n) {
+                        return result;
+                    }
+                    int x = item[0] + dir[j][0];
+                    int y = item[1] + dir[j][1];
+                    if (x < 0 || x > n || y < 0 || y > n || grid[x][y] == 1) {
+                        continue;
+                    }
+                    queue.add(new int[] {x, y});
+                    grid[x][y] = 1;
                 }
             }
         }
-    }
-
-    public boolean check(int newx, int newy, int n) {
-        if (newx > 0 && newx < n && newy > 0 && newy < n) {
-            return true;
-        }
-        return false;
+        return -1;
     }
 }
