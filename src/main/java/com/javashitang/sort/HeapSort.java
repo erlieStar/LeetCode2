@@ -14,7 +14,7 @@ public class HeapSort {
         buildTree(a);
         for (int i = a.length - 1; i >= 0; i--) {
             swap(a, i, 0);
-            heapify(a, i);
+            heapify(a, i, 0);
         }
     }
 
@@ -22,26 +22,26 @@ public class HeapSort {
         int lastNode = a.length - 1;
         int parent = (lastNode - 1) / 2;
         for (int i = parent; i >= 0; i--) {
-            heapify(a, i);
+            heapify(a, a.length, i);
         }
     }
 
-    public static void heapify(int[] a, int i) {
-        if (i >= a.length) {
+    public static void heapify(int[] a, int n, int i) {
+        if (i >= n) {
             return;
         }
         int c1 = 2 * i + 1;
         int c2 = 2 * i + 2;
         int max = i;
-        if (c1 < a.length && a[c1] > a[max]) {
+        if (c1 < n && a[c1] > a[max]) {
             max = c1;
         }
-        if (c2 < a.length && a[c2] > a[max]) {
+        if (c2 < n && a[c2] > a[max]) {
             max = c2;
         }
         if (max != i) {
             swap(a, max ,i);
-            heapify(a, max);
+            heapify(a, n, max);
         }
     }
 
