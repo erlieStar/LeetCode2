@@ -21,7 +21,7 @@ public class HeapSortTest {
 
     @Test
     public void heapify() {
-        int[] array = new int[]{4, 10, 3, 5 , 1, 2};
+        int[] array = new int[]{4, 10, 3, 5, 1, 2};
         HeapSort.heapify(array, array.length,0);
         for (int i : array) {
             System.out.println(i);

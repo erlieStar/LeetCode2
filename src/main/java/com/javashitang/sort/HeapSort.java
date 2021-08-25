@@ -19,6 +19,7 @@ public class HeapSort {
     }
 
     public static void buildTree(int[] a) {
+        // 找到最后一个非叶子节点
         int lastNode = a.length - 1;
         int parent = (lastNode - 1) / 2;
         for (int i = parent; i >= 0; i--) {
@@ -26,6 +27,11 @@ public class HeapSort {
         }
     }
 
+    /**
+     * @param a 数组
+     * @param n 数组长度
+     * @param i 要进行heapify的节点
+     */
     public static void heapify(int[] a, int n, int i) {
         if (i >= n) {
             return;
