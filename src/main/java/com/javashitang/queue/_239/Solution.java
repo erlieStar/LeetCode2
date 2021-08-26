@@ -17,7 +17,7 @@ class Solution {
             if (i < k) {
                 items.add(i, nums[i]);
                 queue.add(nums[i]);
-                if (i == k -1) {
+                if (i == k - 1) {
                     results.add(queue.peek());
                 }
             } else {
