@@ -9,13 +9,16 @@ import java.util.Arrays;
 class Solution {
 
     public int[] getLeastNumbers(int[] arr, int k) {
-        return quickSort(arr, 0, arr.length - 1, k);
+        if (arr.length == 0 || k == 0) {
+            return new int[0];
+        }
+        return quickSort(arr, 0, arr.length - 1, k - 1);
     }
 
     public int[] quickSort(int[] nums, int left, int right, int k) {
         int index = sort(nums, left, right);
         if (index == k) {
-            return Arrays.copyOf(nums, k);
+            return Arrays.copyOf(nums, k + 1);
         }
         // 根据 index 和 k 的位置决定切左段还是右段
         return index > k ? quickSort(nums, left, index - 1, k) : quickSort(nums, index + 1, right, k);

@@ -10,6 +10,9 @@ import java.util.PriorityQueue;
 class Solution {
 
     public int[] getLeastNumbers(int[] arr, int k) {
+        if (arr.length == 0 || k == 0) {
+            return new int[0];
+        }
         PriorityQueue<Integer> queue = new PriorityQueue<>((num1, num2) -> num2 - num1);
         for (int num : arr) {
             if (queue.size() < k) {
