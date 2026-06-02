@@ -1,4 +1,4 @@
-package com.javashitang._200;
+package com.javashitang.medium._200;
 
 
 /**
